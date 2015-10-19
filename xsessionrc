@@ -3,6 +3,5 @@
 #xrandr -q
 #xrandr -s 1024x600
 dropbox start &
-liferea start &
 setxkbmap "us,ru" ",winkeys" "grp:ctrl_shift_toggle,grp_led:scroll" &
 feh --bg-fill '/home/nezabudka/.i3/linux_wall.jpg'

@@ -32,6 +32,7 @@ bindsym Mod4+n exec nautilus --no-desktop
 bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/pictures/screenshots'
 exec gxneur &>/dev/null
 exec nm-applet &>/dev/null
+exec --no-startup-id evolution
 
 # kill focused window
 bindsym $mod+c kill
