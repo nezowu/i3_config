@@ -5,3 +5,4 @@
 dropbox start &
 setxkbmap "us,ru" ",winkeys" "grp:ctrl_shift_toggle,grp_led:scroll" &
 feh --bg-fill '/home/nezabudka/.i3/linux_wall.jpg'
+#nmcli con up <id device>
