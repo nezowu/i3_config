@@ -92,7 +92,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+a focus mode_toggle
+bindsym $mod+q focus mode_toggle
 
 # focus the parent container
 #bindsym $mod+p focus parent
@@ -194,11 +194,7 @@ bindsym $mod+Tab exec --no-startup-id ~/.i3/focus_next_visible.py
 # focus previous visible window
 bindsym Control+Tab exec --no-startup-id ~/.i3/focus_next_visible.py reverse
 
-#bindsym $mod+semicolon move absolute position px 50
-#bindsym $mod+q move window to down
-bindsym $mod+Return exec xdotool click 1
-bindsym Mod4+Return exec xdotool click 2
-bindsym Control+Return exec xdotool click 3
+bindsym $mod+Return exec xdotool click 1 #клик левой кнопкой мыши
 bindsym Mod4+Up exec xdotool click 4	#прокрутка вверх
 bindsym Mod4+Down exec xdotool click 5	#прокрутка вниз
 bindsym $mod+Up exec xdotool mousemove_relative -- 0 -15
@@ -213,6 +209,5 @@ force_display_urgency_hint 500 ms
 bindsym Mod4+l workspace next
 bindsym Mod4+h workspace prev
 
-#переключаем проиложения
-#bindsym $mod+q exec ~/.i3/window-jump.rb
-bindsym $mod+q exec ~/.i3/tab_windows.sh
+#Переключаем плавающие окна и перемещаем их одновременно на передний план
+bindsym $mod+a focus right; exec xdotool click --window $(xdotool getwindowfocus) 1
