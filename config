@@ -15,7 +15,7 @@ set $mod Mod1
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 10
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -158,20 +158,13 @@ bar {
 	colors {
 		separator #ffffff
 		statusline #00bfff
-#		focused_workspace #ffffff #00bfff
-#		inactive_workspace #ffffff #bebebe
 	}
 }
 
-#new_window pixel 5
-#new_float pixel 5
 #	Type	border	background text
 client.focused #000000 #00688b #ffffff
 client.unfocused #000000 #838b83 #ffffff
 client.focused_inactive #000000 #c0c0c0 #000000
-#client.urgent #000000 #ff0000 #ffffff
-
-#swith focus between floateing windows
 
 #move the currrently focused window to the scratchpad
 bindsym $mod+m move scratchpad
@@ -201,10 +194,6 @@ bindsym $mod+Up exec xdotool mousemove_relative -- 0 -15
 bindsym $mod+Down exec xdotool mousemove_relative 0 15
 bindsym $mod+Right exec xdotool mousemove_relative 15 0
 bindsym $mod+Left exec xdotool mousemove_relative -- -15 0
-
-
-
-force_display_urgency_hint 500 ms
 
 bindsym Mod4+l workspace next
 bindsym Mod4+h workspace prev
