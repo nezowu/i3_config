@@ -36,6 +36,7 @@ bindsym $mod+Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -u -e 'mv $f ~/pictu
 
 exec gxneur &>/dev/null
 exec nm-applet &>/dev/null
+exec volumeicon &>/dev/null
 
 #Запуск приложений в определенном рабочем пространстве
 assign [class="Evolution"] 10:mail
