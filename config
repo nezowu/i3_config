@@ -183,11 +183,6 @@ focus_follows_mouse no
 #при нажатии на текущий рабочий стол, открывается предыдущий
 workspace_auto_back_and_forth yes
 
-# focus next visible window
-bindsym $mod+Tab exec --no-startup-id ~/.i3/focus_next_visible.py
-# focus previous visible window
-bindsym Control+Tab exec --no-startup-id ~/.i3/focus_next_visible.py reverse
-
 bindsym $mod+Return exec xdotool click 1 #клик левой кнопкой мыши
 bindsym Mod4+Up exec xdotool click 4	#прокрутка вверх
 bindsym Mod4+Down exec xdotool click 5	#прокрутка вниз
