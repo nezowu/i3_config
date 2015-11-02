@@ -34,7 +34,7 @@ bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/pictures/scre
 #скриншот выделенного окна
 bindsym $mod+Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -u -e 'mv $f ~/pictures/screenshots'
 
-exec gxneur &>/dev/null
+exec gxkb &>/dev/null
 exec nm-applet &>/dev/null
 exec volumeicon &>/dev/null
 
@@ -163,7 +163,7 @@ bar {
 }
 
 #	Type	border	background text
-client.focused #000000 #00688b #ffffff
+client.focused #000000 #6699cc #ffffff
 client.unfocused #000000 #838b83 #ffffff
 client.focused_inactive #000000 #c0c0c0 #000000
 
@@ -196,3 +196,7 @@ bindsym Mod4+h workspace prev
 
 #Переключаем плавающие окна и перемещаем их одновременно на передний план
 bindsym $mod+a focus right; exec xdotool click --window $(xdotool getwindowfocus) 1
+
+bindsym $mod+semicolon exec xdotool mousemove x y
+#bindsym Mod4+semicolon exec xdotool mousemove 10x 10y & exec xdotool mousemove --window $(xdotool getwindowfocus) x y
+
