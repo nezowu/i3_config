@@ -1,9 +1,0 @@
-﻿#!/bin/sh
-#name ~/.xsessionrc
-#xrandr -q
-xrandr -s 1440x900
-dropbox start &
-#setxkbmap "us,ru" -option ""
-setxkbmap "us,ru" ",winkeys" "grp:shift_toggle,grp_led:scroll" &
-feh --bg-fill '/home/nezabudka/.i3/linux_wall.jpg'
-#nmcli con up $(nmcli c | grep RUS | awk '{print $3;}')
