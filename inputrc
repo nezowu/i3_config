@@ -1,0 +1,2 @@
+#set -o vi //in file .bashrc
+set editing-mode vi
