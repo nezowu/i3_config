@@ -1,0 +1,15 @@
+#mkdir -p ~/.mutt/cache
+set from = "gxendz@gmail.com"
+set realname = "olecya nezabudka"
+set imap_user = "gxendz@gmail.com"
+set imap_pass = ""
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed ="+[Gmail]/Drafts"
+set header_cache =~/.mutt/cache/headers
+set message_cachedir =~/.mutt/cache/bodies
+set certificate_file =~/.mutt/certificates
+set smtp_url = "smtp://gxendz@smtp.gmail.com:587/"
+set smtp_pass = ""
+set move = no 
+set imap_keepalive = 900
