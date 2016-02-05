@@ -34,6 +34,7 @@ bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/scre
 #скриншот выделенного окна
 bindsym $mod+Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -u -e 'mv $f ~/Pictures/screenshots'
 
+exec xrandr -s 1440x900
 exec qxkb &>/dev/null
 exec /usr/bin/nm-applet &
 exec feh --bg-fill '/home/nez/.i3/linux_wall.jpg' &
