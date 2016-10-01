@@ -27,7 +27,8 @@ font pango:DejaVu Sans Mono 10
 floating_modifier Mod1
 
 # start a terminal
-bindsym $mod+t exec i3-sensible-terminal
+#bindsym $mod+t exec i3-sensible-terminal
+bindsym $mod+t exec gnome-terminal
 bindsym Mod4+n exec nautilus --no-desktop
 #скриншот
 bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/pictures/screenshots'
@@ -57,7 +58,8 @@ bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym Control+d exec --no-startup-id i3-dmenu-desktop
+#bindsym Control+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Control+d exec rofi -show run
 
 # change focus
 bindsym $mod+h focus left
