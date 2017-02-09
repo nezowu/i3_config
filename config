@@ -38,6 +38,8 @@ bindsym $mod+Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -u -e 'mv $f ~/pictu
 exec gxkb &>/dev/null
 exec nm-applet &>/dev/null
 exec volumeicon &>/dev/null
+exec feh --bg-fill '/home/nez/.config/i3/tux1920x1080.png' &
+exec dropbox start &
 
 #Запуск приложений в определенном рабочем пространстве
 assign [class="Evolution"] 10:mail
