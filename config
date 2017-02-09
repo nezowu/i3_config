@@ -4,7 +4,7 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-
+exec xrandr -s 1360x768
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -31,26 +31,28 @@ floating_modifier Mod1
 bindsym $mod+t exec gnome-terminal
 bindsym Mod4+n exec nautilus --no-desktop
 #скриншот
-bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/pictures/screenshots'
+bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots'
 #скриншот выделенного окна
-bindsym $mod+Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -u -e 'mv $f ~/pictures/screenshots'
+bindsym $mod+Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -u -e 'mv $f ~/Pictures/screenshots'
 
-exec gxkb &>/dev/null
-exec nm-applet &>/dev/null
-exec volumeicon &>/dev/null
-exec feh --bg-fill '/home/nez/.config/i3/tux1920x1080.png' &
-exec dropbox start &
+exec --no-startup-id gxkb
+exec --no-startup-id nm-applet
+exec --no-startup-id volumeicon
+exec --no-startup-id feh --bg-fill '/home/nez/.config/i3/tux1920x1080.png' &
+exec --no-startup-id dropbox start
 
 #Запуск приложений в определенном рабочем пространстве
 assign [class="Evolution"] 10:mail
 assign [class="Liferea"] 9:rss
+assign [class="Firefox"] 8:net
 
 #Включение плавающего режима для определенных приложений
-for_window [class="Evolution"] floating enable
+#for_window [class="Evolution"] floating enable
 
 #Запуск приложения
 exec --no-startup-id evolution
 exec --no-startup-id liferea
+exec --no-startup-id firefox
 
 # kill focused window
 bindsym $mod+c kill
@@ -106,26 +108,26 @@ bindsym $mod+q focus mode_toggle
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
+bindsym $mod+1 workspace " 1 "
+bindsym $mod+2 workspace " 2 "
+bindsym $mod+3 workspace " 3 "
+bindsym $mod+4 workspace " 4 "
+bindsym $mod+5 workspace " 5 "
+bindsym $mod+6 workspace " 6 "
+bindsym $mod+7 workspace " 7 "
+bindsym $mod+8 workspace 8:net
 bindsym $mod+9 workspace 9:rss
 bindsym $mod+0 workspace 10:mail
 
 # move focused container to workspace
-bindsym Control+1 move container to workspace 1
-bindsym Control+2 move container to workspace 2
-bindsym Control+3 move container to workspace 3
-bindsym Control+4 move container to workspace 4
-bindsym Control+5 move container to workspace 5
-bindsym Control+6 move container to workspace 6
-bindsym Control+7 move container to workspace 7
-bindsym Control+8 move container to workspace 8
+bindsym Control+1 move container to workspace " 1 "
+bindsym Control+2 move container to workspace " 2 "
+bindsym Control+3 move container to workspace " 3 "
+bindsym Control+4 move container to workspace " 4 "
+bindsym Control+5 move container to workspace " 5 "
+bindsym Control+6 move container to workspace " 6 "
+bindsym Control+7 move container to workspace " 7 "
+bindsym Control+8 move container to workspace 8:net
 bindsym Control+9 move container to workspace 9:rss
 bindsym Control+0 move container to workspace 10:mail
 
