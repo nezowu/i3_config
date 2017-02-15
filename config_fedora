@@ -15,7 +15,8 @@ set $mod Mod1
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 10
+#font pango:DejaVu Sans Mono 10
+font pango:monospace 8
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -35,12 +36,17 @@ bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/scre
 #скриншот выделенного окна
 bindsym $mod+Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -s -e 'mv $f ~/Pictures/screenshots/windows'
 
-#exec xrandr -s 1440x900
+exec xrandr -s 1368x768
+#dnf install qxkb
 exec --no-startup-id qxkb
-#exec /usr/bin/nm-applet &
+#dnf istall network-manager-applet
+exec --no-startup-id "nice -n19 nm-applet"
 exec feh --bg-fill '/home/nez/.config/i3/tux1920x1080.png' &
 exec --no-startup-id dropbox start
-#exec volumeicon &
+#dnf install volumeicon
+#exec --no-startup-id volumeicon
+exec --no-startup-id "nice -n19 volumeicon"
+#exec --no-startup-id "nice -n19 dunst"
 
 #Запуск приложений в определенном рабочем пространстве
 assign [class="Evolution"] 10:mail
@@ -205,6 +211,4 @@ bindsym Mod4+h workspace prev
 #bindsym $mod+semicolon exec xdotool mousemove x y
 #bindsym Mod4+semicolon exec xdotool mousemove 10x 10y & exec xdotool mousemove --window $(xdotool getwindowfocus) x y
 
-exec --no-startup-id "nice -n19 volumeicon"
-#exec --no-startup-id "nice -n19 wpa_gui -t"
-#exec --no-startup-id "nice -n19 dunst"
+
