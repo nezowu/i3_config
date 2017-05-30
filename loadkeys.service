@@ -1,0 +1,12 @@
+[Unit]
+Description="Loadkeys virt_consoles"
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+StandardInput=tty
+StandardOutput=tty
+ExecStart=/usr/bin/loadkeys /usr/local/etc/myownkeys.txt
+
+[Install]
+WantedBy=multi-user.target

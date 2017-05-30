@@ -1,0 +1,6 @@
+keycode 59 = Console_1
+keycode 60 = Console_2
+keycode 61 = Console_3
+keycode 62 = Console_4
+keycode 63 = Console_5
+keycode 64 = Console_6
