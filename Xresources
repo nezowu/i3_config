@@ -1,0 +1,7 @@
+URxvt.scrollBar: false
+URxvt*font: xft:DejaVu Sans Mono:size=10
+! Background color
+URxvt*background: black
+! Цвет шрифта
+URxvt*foreground: grey90
+
