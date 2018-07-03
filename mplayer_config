@@ -1,0 +1,4 @@
+# Write your default config options here!
+lirc=no
+vo=xv
+really-quiet="1"
