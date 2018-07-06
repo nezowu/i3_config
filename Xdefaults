@@ -1,0 +1,9 @@
+!Xdefaults depricate, Xresources
+!xrdb ~/.Xresources
+XTerm.scrollBar: false
+!URxvt*font: xft:DejaVu Sans Mono:size=10
+XTerm*faceName: Monospace:pixelsize=14
+! Background color
+XTerm*background: black
+! Цвет шрифта
+XTerm*foreground: grey
