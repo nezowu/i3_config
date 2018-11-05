@@ -5,6 +5,8 @@ mkcd {
 }
 declare -x -f mkcd
 
+#sudo mkdir /usr/ml
+#sudo sedfacl "u:nez:rwx" /usr/ml
 include() {
         if [ $1 ]; then
                 if file=$(locate -d /usr/mlocate/mlocate.db -qer /$1$ -n 1) ; then
