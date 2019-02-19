@@ -179,9 +179,9 @@ client.unfocused #000000 #838b83 #ffffff
 client.focused_inactive #000000 #c0c0c0 #000000
 
 #move the currrently focused window to the scratchpad
-bindsym $mod+m move scratchpad
+bindsym $mod+BackSpace move scratchpad
 #show the next scratchpad window or hide the focused scratchpad window.
-bindsym $mod+g scratchpad show
+bindsym $mod+equal scratchpad show
 #bar toggle, hide or show
 bindsym $mod+x bar mode toggle
 
