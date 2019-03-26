@@ -1,0 +1,2 @@
+mocdir = /home/your_user/.moc
+TiMidity_Config = /etc/timidity.cfg
