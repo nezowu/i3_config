@@ -22,3 +22,5 @@ include() {
         fi
 }
 declare -x -f include
+
+alias trans='trans -s en -t ru -b -speak'
