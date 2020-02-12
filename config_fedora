@@ -30,19 +30,19 @@ floating_modifier Mod1
 # start a terminal
 #bindsym $mod+t exec i3-sensible-terminal
 bindsym $mod+t exec gnome-terminal
-bindsym Mod4+n exec nautilus --no-desktop
+bindsym Mod4+n exec nautilus
 #скриншот
 bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots'
 #скриншот выделенного окна
 bindsym $mod+Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -s -e 'mv $f ~/Pictures/screenshots/windows'
 
-exec xrandr -s 1368x768
+#exec xrandr -s 1368x768
 #dnf install qxkb
-exec --no-startup-id qxkb
+#exec --no-startup-id qxkb
 #dnf istall network-manager-applet
 exec --no-startup-id "nice -n19 nm-applet"
 exec feh --bg-fill '/home/nez/.config/i3/tux1920x1080.png' &
-exec --no-startup-id dropbox start
+#exec --no-startup-id dropbox start
 #dnf install volumeicon
 #exec --no-startup-id volumeicon
 exec --no-startup-id "nice -n19 volumeicon"
@@ -211,4 +211,6 @@ bindsym Mod4+h workspace prev
 #bindsym $mod+semicolon exec xdotool mousemove x y
 #bindsym Mod4+semicolon exec xdotool mousemove 10x 10y & exec xdotool mousemove --window $(xdotool getwindowfocus) x y
 
-
+exec echo US >/tmp/xkb
+bindsym Caps_Lock exec xset q | awk '/LED/ {print ($10>1)?"RU":"US"}' >/tmp/xkb && $refresh
+set $refresh killall -SIGUSR1 i3status
