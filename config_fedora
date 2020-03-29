@@ -110,7 +110,7 @@ bindsym $mod+q focus mode_toggle
 #bindsym $mod+p focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+#bindsym $mod+n focus child
 
 # switch to workspace
 bindsym $mod+1 workspace " 1 "
@@ -207,6 +207,7 @@ bindsym Mod4+h workspace prev
 
 #Переключаем плавающие окна и перемещаем их одновременно на передний план
 #bindsym $mod+a focus right; exec xdotool click --window $(xdotool getwindowfocus) 1
+bindsym $mod+a focus right
 
 #bindsym $mod+semicolon exec xdotool mousemove x y
 #bindsym Mod4+semicolon exec xdotool mousemove 10x 10y & exec xdotool mousemove --window $(xdotool getwindowfocus) x y
