@@ -138,6 +138,9 @@ bindsym $mod+q focus mode_toggle
 # focus the child container
 #bindsym $mod+d focus child
 
+#set directory
+#gsettings set org.gnome.gnome-screenshot auto-save-directory "file:///home/$USER/Pictures/screenshots"
+
 #interactive screenshot by pressing printscreen
 bindsym $mod+p exec gnome-screenshot
 #crop-area screenshot by pressing Mod + printscreen
