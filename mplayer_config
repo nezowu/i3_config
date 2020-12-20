@@ -2,4 +2,5 @@
 lirc=no
 vo=xv
 pausing=2
-really-quiet=1
+af=scaletempo
+#really-quiet=1
