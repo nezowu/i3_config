@@ -3,4 +3,6 @@ lirc=no
 vo=xv
 pausing=2
 af=scaletempo
+osdlevel=2
+#osd-fractions=1
 #really-quiet=1
