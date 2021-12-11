@@ -1,5 +1,5 @@
 set -o vi
-mkcd {
+mkcd() {
 	mkdir -p $1
 	cd $_
 }
