@@ -33,6 +33,8 @@ ethernet _first_ {
 }
 
 battery all {
+	#percentage to be shown without decimals
+        integer_battery_capacity = true
         #format = "%status %percentage %remaining"
         format = "%status %percentage"
 }
