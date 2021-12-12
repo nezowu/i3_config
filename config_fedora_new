@@ -34,7 +34,7 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 exec feh --bg-max '/home/nez/.config/i3/tux1920x1080.png' &
-exec --no-startup-id volumeicon
+exec --no-startup-id volumeicon -d hw:0
 
 exec --no-startup-id blueman-applet
 
