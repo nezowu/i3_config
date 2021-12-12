@@ -1,4 +1,5 @@
-#bindsym button1 exec tran
+#bindsym button3 exec tran
+#/usr/local/bin/tran
 #!/bin/bash
 text=$(/usr/bin/trans -b -s en -t ru -speak "$(xsel -o)")
 notify-send --icon=info "${text@U}"

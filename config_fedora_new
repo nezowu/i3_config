@@ -280,3 +280,5 @@ focus_follows_mouse normal
 exec echo US >/tmp/xkb
 bindsym Caps_Lock exec xset q | awk '/LED/ {print ($10>1)?"RU":"US"}' >/tmp/xkb && $refresh
 set $refresh killall -SIGUSR1 i3status
+
+bindsym button3 exec tran
