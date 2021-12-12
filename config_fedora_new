@@ -72,9 +72,12 @@ assign [class="Liferea"] $ws9
 #assign [class="Firefox"] $ws7
 #assign [class="Transmission-gtk"] $ws6
 assign [class="Google-chrome"] $ws8
+assign [class="Firefox"] $ws7
+assign [class="Stardict"] $ws10
 
 #Включение плавающего режима для определенных приложений
 #for_window [class="Evolution"] floating enable
+for_window [class="Stardict"] floating enable
 
 #Запуск приложения
 exec --no-startup-id evolution
