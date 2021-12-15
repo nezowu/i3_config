@@ -4,6 +4,7 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
+exec --no-startup-id xrandr -s 1280x720
 
 # i3 config file (v4)
 #
@@ -45,6 +46,10 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+#brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id /usr/bin/light -A 5 && $refresh_i3status
+bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/light -U 5 && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -279,7 +284,6 @@ workspace_auto_back_and_forth yes
 focus_follows_mouse normal
 
 exec echo US >/tmp/xkb
-bindsym Caps_Lock exec xset q | awk '/LED/ {print ($10>1)?"RU":"US"}' >/tmp/xkb && $refresh
-set $refresh killall -SIGUSR1 i3status
+bindsym Caps_Lock exec xset q | awk '/LED/ {print ($10>1)?"RU":"US"}' >/tmp/xkb && $refresh_i3status
 
 bindsym button3 exec tran
