@@ -24,7 +24,7 @@ order += "read_file xkb"
 
 read_file light {
 	#max 255
-        format = "🔆%content"
+        format = "🔆%content "
         path = "/sys/class/backlight/amdgpu_bl0/brightness"
 }
 
