@@ -1,2 +1,6 @@
 #/etc/dunst/dunstrc install with gnome
 icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
+#~/.config/dunst/dunstrc
+[global]
+    font = DejaVu Sans Mono 12
+    offset = 50x50
