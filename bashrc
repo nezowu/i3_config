@@ -3,7 +3,7 @@ mkcd() {
 	mkdir -p $1
 	cd $_
 }
-declare -x -f mkcd
+declare -xf mkcd
 
 #sudo mkdir /usr/ml
 #sudo sedfacl "u:nez:rwx" /usr/ml
@@ -21,6 +21,7 @@ include() {
                 updatedb -l 0 -o /usr/mlocate/mlocate.db -U /usr/lbash
         fi
 }
-declare -x -f include
+declare -xf include
 
 alias trans='trans -s en -t ru -b -speak'
+alias vi='[ $# -eq 0 -a -f Session.vim ] && vim -S || vim'
