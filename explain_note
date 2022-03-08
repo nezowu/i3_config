@@ -1,0 +1,16 @@
+for_window [window_role="w3m"] floating enable
+
+#xprop | grep -i 'role'
+
+cat ~/.local/share/applications/w3m.desktop
+[Desktop Entry]
+Type=Application
+Name=w3m
+Comment=w3m text browser
+Terminal=false
+Exec=gnome-terminal --window --role=w3m -q -- w3m %u
+Categories=Command line
+
+cat ~/.local/share/applications/mimeapps.list
+[Default Applications]
+text/html=w3m.desktop
