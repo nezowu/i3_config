@@ -18,7 +18,7 @@ set $mod Mod1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono 8
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -29,16 +29,16 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-##exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-exec feh --bg-max '/home/nez/.config/i3/tux1920x1080.png' &
+exec feh --bg-fill '/home/nez/.config/i3/tux1920x1080.png'
 #exec --no-startup-id volumeicon -d hw:0
 exec --no-startup-id volumeicon -d hw:1
 
-exec --no-startup-id blueman-applet
+#exec --no-startup-id blueman-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -55,11 +55,9 @@ bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/light -U 5 && $refre
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+t exec gnome-terminal
 
 # kill focused window
-#bindsym $mod+Shift+q kill
 bindsym $mod+c kill
 
 # start dmenu (a program launcher)
@@ -74,7 +72,7 @@ bindsym $mod+d exec dmenu_run
 
 #Запуск приложений в определенном рабочем пространстве
 assign [class="Evolution"] $ws10
-assign [class="Liferea"] $ws9
+#assign [class="Liferea"] $ws9
 #assign [class="Firefox"] $ws7
 #assign [class="Transmission-gtk"] $ws6
 assign [class="Google-chrome"] $ws8
@@ -82,17 +80,15 @@ assign [class="Firefox"] $ws7
 assign [class="Stardict"] $ws10
 
 #Включение плавающего режима для определенных приложений
-#for_window [class="Evolution"] floating enable
 for_window [class="Stardict"] floating enable
+for_window [class="vokoscreenNG"] floating enable
 #explain_note
 for_window [window_role="w3m"] mark "into", floating enable
-for_window [con_mark="into"] mark "from" move scratchpad
+for_window [con_mark="into"] mark "from", move scratchpad
 for_window [con_mark="from"] scratchpad show
 
 #Запуск приложения
 exec --no-startup-id evolution
-#exec --no-startup-id liferea
-#exec --no-startup-id firefox
 exec --no-startup-id google-chrome
 
 # change focus
@@ -130,10 +126,9 @@ bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 #bindsym $mod+h split h
-bindsym $mod+g split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+#bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -166,6 +161,11 @@ bindsym $mod+p exec gnome-screenshot
 bindsym $mod+n exec gnome-screenshot -a
 #grab the current active window
 bindsym Control+$mod+n exec gnome-screenshot -w
+
+#move the currrently focused window to the scratchpad
+bindsym $mod+x move scratchpad
+#show the next scratchpad window or hide the focused scratchpad window.
+bindsym $mod+Tab scratchpad show
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.

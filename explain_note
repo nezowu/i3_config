@@ -1,4 +1,7 @@
-for_window [window_role="w3m"] floating enable
+#for_window [window_role="w3m"] floating enable
+for_window [window_role="w3m"] mark "into", floating enable
+for_window [con_mark="into"] mark "from", move scratchpad
+for_window [con_mark="from"] scratchpad show
 
 #xprop | grep -i 'role'
 
@@ -8,9 +11,13 @@ Type=Application
 Name=w3m
 Comment=w3m text browser
 Terminal=false
-Exec=gnome-terminal --window --role=w3m -q -- w3m %u
+Exec=gnome-terminal --window --role=w3m -q -- w3m -v -o auto_image=FALSE %u
 Categories=Command line
 
 cat ~/.local/share/applications/mimeapps.list
+[Default Applications]
+text/html=w3m.desktop
+
+head -2 ~/.config/mimeapps.list
 [Default Applications]
 text/html=w3m.desktop
