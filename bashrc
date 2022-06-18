@@ -24,4 +24,6 @@ include() {
 declare -xf include
 
 alias trans='trans -s en -t ru -b -speak'
-alias vi='[ $# -eq 0 -a -f Session.vim ] && vim -S || vim'
+vi() {
+	[ $# -eq 0 -a -f Session.vim ] && vim -S || vim -p $@'
+}
