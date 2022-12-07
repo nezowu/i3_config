@@ -14,18 +14,17 @@ include() {
                 if [ "${file[1]}" ]; then
                         echo Need a unique file, received: ${file[@]}
                         exit 1
+		fi
+                if [ "$file" ]; then
+                        source "$file"
                 else
-                        if [ "$file" ]; then
-                                source "$file"
-                        else
-                                if [ "$flag" ]; then
-                                        echo No such library $1
-                                        exit 1
-                                fi
-                                updatedb -l 0 -o /usr/pl/plocate.db -U $HOME
-                                flag=1
-                                continue
+                        if [ "$flag" ]; then
+                                echo No such library $1
+                                exit 1
                         fi
+                        updatedb -l 0 -o /usr/pl/plocate.db -U $HOME
+                        flag=1
+                        continue
                 fi
                 shift
                 flag=
