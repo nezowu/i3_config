@@ -3,25 +3,35 @@ mkcd() {
 	mkdir -p $1
 	cd $_
 }
-declare -xf mkcd
+export -f mkcd
 
-#sudo mkdir /usr/ml
-#sudo sedfacl "u:nez:rwx" /usr/ml
+#sudo mkdir /usr/pl
+#sudo sedfacl "u:$USER:rwx" /usr/pl
+#updatedb -l 0 -o /usr/pl/plocate.db -U $HOME
 include() {
-        if [ $1 ]; then
-                if file=$(locate -d /usr/mlocate/mlocate.db -qer /$1$ -n 1) ; then
-                        source $file
+        while (( $# )); do
+                file=($(locate -d /usr/pl/plocate.db -er /$1$))
+                if [ "${file[1]}" ]; then
+                        echo Need a unique file, received: ${file[@]}
+                        exit 1
                 else
-                        updatedb -l 0 -o /usr/mlocate/mlocate.db -U /usr/lbash
-                        if file=$(locate -d /usr/mlocate/mlocate.db -qer /$1$ -n 1) ; then
-				source $file
-			fi
+                        if [ "$file" ]; then
+                                source "$file"
+                        else
+                                if [ "$flag" ]; then
+                                        echo No such library $1
+                                        exit 1
+                                fi
+                                updatedb -l 0 -o /usr/pl/plocate.db -U $HOME
+                                flag=1
+                                continue
+                        fi
                 fi
-        else
-                updatedb -l 0 -o /usr/mlocate/mlocate.db -U /usr/lbash
-        fi
+                shift
+                flag=
+        done
 }
-declare -xf include
+export -f include
 
 alias trans='trans -s en -t ru -b -speak'
 vi() {
