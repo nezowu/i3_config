@@ -9,6 +9,9 @@ export -f mkcd
 #sudo sedfacl "u:$USER:rwx" /usr/pl
 #updatedb -l 0 -o /usr/pl/plocate.db -U $HOME
 include() {
+	if ! (( $# )); then
+		updatedb -l 0 -o /usr/pl/plocate.db -U $HOME
+	fi
         while (( $# )); do
                 file=($(locate -d /usr/pl/plocate.db -er /$1$))
                 if [ "${file[1]}" ]; then

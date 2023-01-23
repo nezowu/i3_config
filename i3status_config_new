@@ -25,7 +25,8 @@ order += "read_file xkb"
 read_file light {
 	#max 255
         format = "🔆%content "
-        path = "/sys/class/backlight/amdgpu_bl0/brightness"
+	#amdgpu_bl0
+        path = "/sys/class/backlight/amdgpu_bl1/brightness"
 }
 
 wireless _first_ {
