@@ -28,12 +28,12 @@ nnoremap <S-h> gT
 nnoremap <S-l> gt
 
 "autocomplete pair
-inoremap ' ''<Left>
+"inoremap ' ''<Left>
 inoremap " ""<Left>
 "inoremap < <><Left>
-inoremap [ []<Left>
+"inoremap [ []<Left>
 inoremap { {}<Left>
 inoremap {<CR> {<CR>}<Esc>O
 inoremap ( ()<Left>
 inoremap (<CR> () {<CR>}<Esc>O
-"inoremap () () {<CR>}<Esc>O
+inoremap () () {<CR>}<Esc>O

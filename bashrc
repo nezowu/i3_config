@@ -1,6 +1,7 @@
 set -o vi
 mkcd() {
-	mkdir -p $1
+	(($#)) || return
+	mkdir -p ${@: -1}
 	cd $_
 }
 export -f mkcd
