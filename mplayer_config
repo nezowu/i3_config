@@ -6,5 +6,6 @@ af=scaletempo
 #osdlevel=2
 subfont-osd-scale=2
 subfont-text-scale=3
+subpos=0
 #osd-fractions=1
 #really-quiet=1
