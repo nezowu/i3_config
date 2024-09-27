@@ -34,6 +34,7 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+#feh --bg-scale
 exec feh --bg-fill '/home/nez/.config/i3/tux1920x1080.png'
 #exec --no-startup-id volumeicon -d hw:0
 exec --no-startup-id volumeicon -d hw:1

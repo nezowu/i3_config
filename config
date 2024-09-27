@@ -38,7 +38,7 @@ bindsym $mod+Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -u -e 'mv $f ~/Pictu
 exec --no-startup-id gxkb
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
-exec --no-startup-id feh --bg-fill '/home/nez/.config/i3/tux1920x1080.png' &
+exec --no-startup-id feh --bg-scale '/home/nez/.config/i3/tux1920x1080.png' &
 exec --no-startup-id dropbox start
 
 #Запуск приложений в определенном рабочем пространстве
