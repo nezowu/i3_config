@@ -1,0 +1,91 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$HOME/go/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+	for rc in ~/.bashrc.d/*; do
+		if [ -f "$rc" ]; then
+			. "$rc"
+		fi
+	done
+fi
+
+unset rc
+
+set -o vi
+mkcd() {
+	(( $# )) || return
+	mkdir -p ${@: -1}
+	cd $_
+}
+export -f mkcd
+#typeset -xf mkcd
+#declare -xf mkcd
+
+#sudo mkdir /usr/pl
+#sudo sedfacl "u:$USER:rwx" /usr/pl
+#updatedb -l 0 -o /usr/pl/plocate.db -U $HOME
+include() {
+	if ! (( $# )); then
+		updatedb -l 0 -o /usr/pl/plocate.db -U $HOME
+	fi
+	while (( $# )); do
+		file=($(locate -d /usr/pl/plocate.db -er /$1$))
+		if [ "${file[1]}" ]; then
+			echo Need a unique file, received: ${file[@]}
+			exit 1
+		fi
+		if [ "$file" ]; then
+			source "$file"
+		else
+			if [ "$flag" ]; then
+				echo No such library $1
+				exit 1
+			fi
+			updatedb -l 0 -o /usr/pl/plocate.db -U $HOME
+			flag=1
+			continue
+		fi
+		shift
+		flag=
+	done
+}
+#declare -xf include
+export -f include
+
+vi() {
+	[ $# -eq 0 -a -f Session.vim ] && vim -S || vim -p -- $@
+}
+
+cam() {
+	cambrinary -w $@ | less -Re
+}
+export -f cam
+
+alias trans='trans -s en -t ru -b -speak'
+alias gd='go doc'
+alias rd='rustup doc'
+alias dic='dict -d foldoc'
+alias diw='dict -d wn'
+alias gdb='gdb -q'
+#alias cam='cambrinary -w'
+. "$HOME/.cargo/env"
+#export RANGER_LOAD_DEFAULT_RC=FALSE
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
